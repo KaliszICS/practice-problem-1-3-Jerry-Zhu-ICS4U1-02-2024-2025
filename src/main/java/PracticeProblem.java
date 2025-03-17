@@ -1,17 +1,19 @@
+import java.io.*;
+
 public class PracticeProblem {
 
 	public static void main(String args[]) {
 
 	}
-public static String readfile(String fileName){
+public static String readFile(String fileName){
 	String contents = "";
 	BufferedReader inputStream = null;
 	
 	try{
 		String line;
 inputStream = new BufferedReader(new FileReader(fileName));
-while(line = inputStream.readLine() != null){
-contents = contents + line;
+while((line = inputStream.readLine()) != null){
+contents = contents + line + "\n";
 }
 	}
 
@@ -32,15 +34,15 @@ contents = contents + line;
 	return contents;
 }
 	
-public static String backwardsReadfile(String fileName){
+public static String backwardsReadFile(String fileName){
 	String contents = "";
 	BufferedReader inputStream = null;
 	
 	try{
 		String line;
 inputStream = new BufferedReader(new FileReader(fileName));
-while(line = inputStream.readLine() != null){
-contents = contents + line; 
+while((line = inputStream.readLine()) != null){
+contents = contents + line + "\n"; 
 }
 	}
 
@@ -59,7 +61,7 @@ contents = contents + line;
 		}
 	}
 String bwd = "";
-	for (int i = contents.length(); i > 0; i--){
+	for (int i = contents.length()-1; i >= 0; i--){
 		bwd = bwd + contents.charAt(i);
 	}
 	return bwd;
